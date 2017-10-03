@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+
+{%block content%}
+<form action="/validate" method="post">
+    <label>Username:
+        <input type="text" name="username" value="{{username}}" />
+    </label>
+    {%if validUsername == false%}
+        Username is invaid
+    {%endif%}
+    <br><br>
+    <label>Password:
+        <input type="password" name="password" />
+    </label>
+    {%if validPassword == false%}
+        Password is invaid
+    {%endif%}
+    <br><br>
+    <label>Verify Password:
+        <input type="password" name="passwordVerify" />
+    </label>
+    {%if validVerify == false%}
+        Passwords do not match
+    {%endif%}
+    <br><br>
+    <label>E-Mail:
+        <input type="text" name="email" value="{{email}}" />
+    </label>
+    {%if validEmail == false%}
+        Email is not valid
+    {%endif%}
+    <br><br>
+    
+    <input type="submit" name"Submit" />
+</form>
+{%endblock%}
